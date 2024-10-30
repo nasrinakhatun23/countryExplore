@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Country Explorer</h1>
+        <div class="header-icons">
+            <div class="favorites-icon" onclick="showFavorites()">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/star.png" alt="Favorites" id="favoritesIcon">
+                <span id="favoritesCount">0</span>
+            </div>
+        </div>
+        <div class="filter-options">
+            <select id="regionFilter">
+                <option value="">Select Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+            <select id="languageFilter">
+                <option value="">Select Language</option>
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="Arabic">Arabic</option>
+                <option value="Chinese">Chinese</option>
+            </select>
+        </div>
+    </header>
+    <div class="container" id="mainContent">
+        <div class="search-bar">
+            <input type="text" id="searchBar" placeholder="Search for a country...">
+            <button onclick="searchCountry()">Search</button>
+        </div>
+        <div id="countryList" class="country-list"></div>
+        <div id="countryDetails" class="country-details" style="display: none;"></div>
+        <div class="back-btn" onclick="goBack()" style="display: none;">← Back to Country List</div>
+    </div>
+    <div class="favorites-page" id="favoritesPage" style="display: none;">
+        <h2>Favorites</h2>
+        <div id="favoritesList" class="country-list"></div>
+        <button onclick="goBackToMain()">Back to Main</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
